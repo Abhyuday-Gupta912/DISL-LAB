@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // 8-to-1 Multiplexer using case
 module mux8to1(w, s, f);
     input [7:0] w;
@@ -18,23 +17,3 @@ module mux8to1(w, s, f);
         endcase
     end
 endmodule
-=======
-module mux8to1(f,w,s);
-input [7:0]w;
-input [2:0]s;
-output reg f;
-always @(*)
-begin
-case(s)
-    3`b000: f=w[0];
-    3`b001: f=w[1];
-    3`b010: f=w[2];
-    3`b011: f=w[3];
-    3`b100: f=w[4];
-    3`b101: f=w[5];
-    3`b110: f=w[6];
-    3`b111: f=w[7];
-endcase
-end
-endmodule
->>>>>>> 4e14cbe5670a17618c3a80777d0ac37318682f46

@@ -1,0 +1,59 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55a9375e0810 .scope module, "comp4bit_tb" "comp4bit_tb" 2 4;
+ .timescale -9 -9;
+v0x55a9375f33e0_0 .var "a", 3 0;
+v0x55a9375f34c0_0 .var "b", 3 0;
+v0x55a9375f3560_0 .net "eq", 0 0, L_0x55a9375f3a70;  1 drivers
+v0x55a9375f3630_0 .net "gt", 0 0, L_0x55a9375f3980;  1 drivers
+v0x55a9375f3700_0 .net "lt", 0 0, L_0x55a9375f37f0;  1 drivers
+S_0x55a9375e09a0 .scope module, "c1" "comp4bit" 2 8, 3 1 0, S_0x55a9375e0810;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 1 "lt";
+    .port_info 3 /OUTPUT 1 "et";
+    .port_info 4 /OUTPUT 1 "gt";
+v0x55a9375e0b80_0 .net "a", 3 0, v0x55a9375f33e0_0;  1 drivers
+v0x55a9375f2ff0_0 .net "b", 3 0, v0x55a9375f34c0_0;  1 drivers
+v0x55a9375f30d0_0 .net "et", 0 0, L_0x55a9375f3980;  alias, 1 drivers
+v0x55a9375f3170_0 .net "gt", 0 0, L_0x55a9375f3a70;  alias, 1 drivers
+v0x55a9375f3230_0 .net "lt", 0 0, L_0x55a9375f37f0;  alias, 1 drivers
+L_0x55a9375f37f0 .cmp/gt 4, v0x55a9375f34c0_0, v0x55a9375f33e0_0;
+L_0x55a9375f3980 .cmp/eq 4, v0x55a9375f33e0_0, v0x55a9375f34c0_0;
+L_0x55a9375f3a70 .cmp/gt 4, v0x55a9375f33e0_0, v0x55a9375f34c0_0;
+    .scope S_0x55a9375e0810;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "comp4bit_tb.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55a9375e0810 {0 0 0};
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x55a9375f33e0_0, 0, 4;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x55a9375f34c0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x55a9375f33e0_0, 0, 4;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x55a9375f34c0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x55a9375f33e0_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x55a9375f34c0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 18 "$display", "Comparator test complete" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "comp4bit_tb.v";
+    "./comp4bit.v";

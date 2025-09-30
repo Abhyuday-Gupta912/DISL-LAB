@@ -1,0 +1,59 @@
+$date
+	Tue Sep 30 14:30:58 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module pos_D_tb $end
+$var wire 1 ! Q $end
+$var reg 1 " Clock $end
+$var reg 1 # D $end
+$var reg 1 $ Reset $end
+$scope module f1 $end
+$var wire 1 " Clock $end
+$var wire 1 # D $end
+$var wire 1 $ Reset $end
+$var reg 1 ! Q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1$
+1#
+0"
+0!
+$end
+#20
+1"
+#30
+0$
+#40
+0"
+#50
+0#
+#60
+1"
+#80
+0"
+#90
+1#
+#100
+1!
+1"
+#120
+0"
+#130
+0!
+1$
+#140
+1"
+#160
+0"
+0$
+#180
+1!
+1"

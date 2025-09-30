@@ -1,0 +1,72 @@
+$date
+	Tue Sep 30 14:48:47 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module neg_SR_ff_tb $end
+$var wire 1 ! Q $end
+$var reg 1 " Clock $end
+$var reg 1 # R $end
+$var reg 1 $ Resetn $end
+$var reg 1 % S $end
+$scope module dut $end
+$var wire 1 " Clock $end
+$var wire 1 # R $end
+$var wire 1 $ Resetn $end
+$var wire 1 % S $end
+$var reg 1 ! Q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1%
+0$
+1#
+0"
+0!
+$end
+#20
+1"
+#40
+0"
+#45
+0#
+0%
+1$
+#60
+1"
+#80
+0"
+#85
+1%
+#100
+1"
+#120
+1!
+0"
+#125
+0%
+#140
+1"
+#160
+0"
+#165
+1#
+#180
+1"
+#200
+0!
+0"
+#205
+1%
+#220
+1"
+#240
+x!
+0"
+#245

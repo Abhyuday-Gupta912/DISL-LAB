@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 `include "adder4.v"
 `include "fulladd.v"
+=======
+>>>>>>> 4e14cbe5670a17618c3a80777d0ac37318682f46
 module tb5;
 reg cin,x3,x2,x1,x0,y3,y2,y1,y0;
 wire s3,s2,s1,s0,cout;

@@ -1,0 +1,83 @@
+$date
+	Tue Oct  7 15:14:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module shiftreg_PL_TB $end
+$var wire 8 ! Dout [7:0] $end
+$var reg 1 " Din $end
+$var reg 8 # Pin [7:0] $end
+$var reg 1 $ clk $end
+$var reg 1 % load $end
+$var reg 1 & shift $end
+$scope module uut $end
+$var wire 1 " Din $end
+$var wire 8 ' Pin [7:0] $end
+$var wire 1 $ clk $end
+$var wire 1 % load $end
+$var wire 1 & shift $end
+$var reg 8 ( Dout [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx (
+b10101010 '
+0&
+1%
+0$
+b10101010 #
+0"
+bx !
+$end
+#10
+b10101010 !
+b10101010 (
+1$
+#20
+0$
+1"
+0%
+#30
+b1010101 !
+b1010101 (
+1$
+#40
+0$
+0"
+#50
+b10101010 !
+b10101010 (
+1$
+#60
+0$
+1&
+#70
+1$
+#80
+0$
+b11110000 #
+b11110000 '
+1%
+0&
+#90
+b11110000 !
+b11110000 (
+1$
+#100
+0$
+#110
+1$
+#120
+0$
+#130
+1$
+#140
+0$
+#150
+1$

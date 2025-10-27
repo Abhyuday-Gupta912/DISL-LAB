@@ -1,0 +1,151 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01268798 .scope module, "q2_tb" "q2_tb" 2 5;
+ .timescale -9 -9;
+v01595648_0 .var "clk", 0 0;
+v01594D58_0 .var "reset", 0 0;
+RS_015741CC .resolv tri, L_015950C8, L_01595280, C4<zz>, C4<zz>;
+v015956F8_0 .net8 "state", 1 0, RS_015741CC; 2 drivers
+v01594F68_0 .var "x", 0 0;
+S_01268820 .scope module, "f" "q2" 2 11, 3 3, S_01268798;
+ .timescale 0 0;
+L_0126C4D8 .functor NOT 1, L_01595070, C4<0>, C4<0>, C4<0>;
+L_015711D8 .functor AND 1, L_0126C4D8, L_01594CA8, C4<1>, C4<1>;
+L_015710C0 .functor NOT 1, v01594F68_0, C4<0>, C4<0>, C4<0>;
+L_01571360 .functor AND 1, L_015710C0, L_01594CA8, C4<1>, C4<1>;
+L_015710F8 .functor OR 1, L_015711D8, L_01571360, C4<0>, C4<0>;
+L_015712B8 .functor NOT 1, L_01594CA8, C4<0>, C4<0>, C4<0>;
+L_015711A0 .functor NOT 1, v01594F68_0, C4<0>, C4<0>, C4<0>;
+L_01571280 .functor AND 1, L_015712B8, L_015711A0, C4<1>, C4<1>;
+L_01571328 .functor AND 1, v01594F68_0, L_01595070, C4<1>, C4<1>;
+L_015713D0 .functor OR 1, L_01571280, L_01571328, C4<0>, C4<0>;
+L_015964D0 .functor NOT 1, L_01595070, C4<0>, C4<0>, C4<0>;
+L_01596690 .functor AND 1, L_015964D0, L_01594CA8, C4<1>, C4<1>;
+L_015969A0 .functor AND 1, L_01596690, v01594F68_0, C4<1>, C4<1>;
+L_01596818 .functor OR 1, L_015713D0, L_015969A0, C4<0>, C4<0>;
+v0126ECF8_0 .net "A", 0 0, L_01595070; 1 drivers
+v0126EA90_0 .net "B", 0 0, L_01594CA8; 1 drivers
+v0126E9E0_0 .net "TA", 0 0, L_015710F8; 1 drivers
+v0126EC48_0 .net "TB", 0 0, L_01596818; 1 drivers
+v0126E7D0_0 .net *"_s10", 0 0, L_01571360; 1 drivers
+v0126EDA8_0 .net *"_s14", 0 0, L_015712B8; 1 drivers
+v0126ECA0_0 .net *"_s16", 0 0, L_015711A0; 1 drivers
+v0126E8D8_0 .net *"_s18", 0 0, L_01571280; 1 drivers
+v0126ED50_0 .net *"_s20", 0 0, L_01571328; 1 drivers
+v0126EE00_0 .net *"_s22", 0 0, L_015713D0; 1 drivers
+v0126E880_0 .net *"_s24", 0 0, L_015964D0; 1 drivers
+v0126E778_0 .net *"_s26", 0 0, L_01596690; 1 drivers
+v0126E930_0 .net *"_s28", 0 0, L_015969A0; 1 drivers
+v0126E988_0 .net *"_s4", 0 0, L_0126C4D8; 1 drivers
+v0126EAE8_0 .net *"_s6", 0 0, L_015711D8; 1 drivers
+v0126EB40_0 .net *"_s8", 0 0, L_015710C0; 1 drivers
+v0126EB98_0 .net "clk", 0 0, v01595648_0; 1 drivers
+v01595018_0 .net "reset", 0 0, v01594D58_0; 1 drivers
+v01594E08_0 .alias "state", 1 0, v015956F8_0;
+v01594F10_0 .net "x", 0 0, v01594F68_0; 1 drivers
+L_01595070 .part RS_015741CC, 1, 1;
+L_01594CA8 .part RS_015741CC, 0, 1;
+L_015950C8 .part/pv v0126EA38_0, 1, 1, 2;
+L_01595280 .part/pv v0126B4D0_0, 0, 1, 2;
+S_01268BD8 .scope module, "tfa" "t_ff" 3 17, 4 3, S_01268820;
+ .timescale 0 0;
+v0126EA38_0 .var "Q", 0 0;
+v0126EE58_0 .alias "T", 0 0, v0126E9E0_0;
+v0126E828_0 .alias "clk", 0 0, v0126EB98_0;
+v0126E720_0 .alias "reset", 0 0, v01595018_0;
+S_012688A8 .scope module, "tfb" "t_ff" 3 18, 4 3, S_01268820;
+ .timescale 0 0;
+v0126B4D0_0 .var "Q", 0 0;
+v0126B528_0 .alias "T", 0 0, v0126EC48_0;
+v0126C480_0 .alias "clk", 0 0, v0126EB98_0;
+v0126EBF0_0 .alias "reset", 0 0, v01595018_0;
+E_0126AA70 .event posedge, v0126EBF0_0, v0126C480_0;
+    .scope S_01268BD8;
+T_0 ;
+    %wait E_0126AA70;
+    %load/v 8, v0126E720_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126EA38_0, 0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0126EE58_0, 1;
+    %jmp/0xz  T_0.2, 8;
+    %load/v 8, v0126EA38_0, 1;
+    %inv 8, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126EA38_0, 0, 8;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/v 8, v0126EA38_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126EA38_0, 0, 8;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_012688A8;
+T_1 ;
+    %wait E_0126AA70;
+    %load/v 8, v0126EBF0_0, 1;
+    %jmp/0xz  T_1.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126B4D0_0, 0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/v 8, v0126B528_0, 1;
+    %jmp/0xz  T_1.2, 8;
+    %load/v 8, v0126B4D0_0, 1;
+    %inv 8, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126B4D0_0, 0, 8;
+    %jmp T_1.3;
+T_1.2 ;
+    %load/v 8, v0126B4D0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0126B4D0_0, 0, 8;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_01268798;
+T_2 ;
+    %set/v v01595648_0, 0, 1;
+T_2.0 ;
+    %delay 5, 0;
+    %load/v 8, v01595648_0, 1;
+    %inv 8, 1;
+    %set/v v01595648_0, 8, 1;
+    %jmp T_2.0;
+    %end;
+    .thread T_2;
+    .scope S_01268798;
+T_3 ;
+    %vpi_call 2 22 "$dumpfile", "q2_tb.vcd";
+    %vpi_call 2 23 "$dumpvars", 1'sb0, S_01268798;
+    %set/v v01594D58_0, 1, 1;
+    %set/v v01594F68_0, 0, 1;
+    %delay 12, 0;
+    %set/v v01594D58_0, 0, 1;
+    %set/v v01594F68_0, 0, 1;
+    %delay 80, 0;
+    %set/v v01594F68_0, 1, 1;
+    %delay 80, 0;
+    %set/v v01594F68_0, 0, 1;
+    %delay 40, 0;
+    %set/v v01594F68_0, 1, 1;
+    %delay 40, 0;
+    %vpi_call 2 34 "$finish";
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "q2_tb.v";
+    "q2.v";
+    "t_ff.v";
